@@ -4,8 +4,11 @@ export function getAllContacts() {
     return contacts;
   }
   
+  let contactIdCounter = 1;
+
   export function addContact(contact) {
     const contacts = getAllContacts();
+    contact.id = contactIdCounter++;
     contacts.push(contact);
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }
@@ -17,6 +20,7 @@ export function getAllContacts() {
       contacts[index] = updatedContact;
       localStorage.setItem('contacts', JSON.stringify(contacts));
     }
+    
   }
   
   export function deleteContact(contactId) {
@@ -24,4 +28,4 @@ export function getAllContacts() {
     const filteredContacts = contacts.filter((contact) => contact.id !== contactId);
     localStorage.setItem('contacts', JSON.stringify(filteredContacts));
   }
-// console.log(contact)
+

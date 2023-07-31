@@ -4,7 +4,7 @@
       <input type="text" v-model="searchQuery" @input="filterContacts" placeholder="Search contacts...">
     <ul>
       <li v-for="contact in filteredContacts" :key="contact.id">
-        <router-link :to="{ name: 'contact-details', params: { id: contact.id } }">{{ contact.lastName }}, {{ contact.firstName }}</router-link>
+        <router-link :to="{ name: 'contact-details', params: { id: contact.id } }">{{ contact.lastName }}, {{ contact.firstName }}</router-link><br>
         <button @click="deleteContact(contact.id)">Delete</button>
       </li>
     </ul>
