@@ -9,12 +9,13 @@
         <label for="email">Email:</label>
         <input type="email" id="email" v-model="newContact.email" required>
         <button type="submit">Add Contact</button>
+        <router-link :to="{ path: '/' }">Cancel</router-link>
       </form>
     </div>
   </template>
   
   <script>
-  import { addContact } from '../contact.js';
+  import { addContact } from '/contacts.js';
   
   export default {
     data() {
@@ -31,6 +32,9 @@
         event.preventDefault();
         addContact(this.newContact);
         this.$router.push({ path: '/' });
+      },
+      cancel() {
+        this.$router.push({ path: '/' }); 
       },
     },
   };

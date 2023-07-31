@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 
+
+
 import { createRouter, createWebHistory } from 'vue-router';
 
 import ContactBookStart from './components/ContactBookStart.vue';
@@ -13,10 +15,12 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', component: ContactBookStart },
-    { path: '/contact/:id', component: ContactDetails },
+    { path: '/contact/:id', component: ContactDetails, name: 'contact-details' },
     { path: '/new', component: NewContactForm },
     { path: '/edit/:id', component: EditContactForm },
   ],
 });
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.mount('#app');

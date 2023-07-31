@@ -1,3 +1,4 @@
+
 export function getAllContacts() {
     const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
     return contacts;
@@ -23,4 +24,4 @@ export function getAllContacts() {
     const filteredContacts = contacts.filter((contact) => contact.id !== contactId);
     localStorage.setItem('contacts', JSON.stringify(filteredContacts));
   }
-  
+// console.log(contact)

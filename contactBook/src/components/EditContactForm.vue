@@ -14,7 +14,7 @@
   </template>
   
   <script>
-  import { getAllContacts, updateContact } from '../contact.js';
+  import { getAllContacts, updateContact } from '/contacts.js';
   
   export default {
     props: ['id'],
